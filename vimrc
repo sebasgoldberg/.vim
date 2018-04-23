@@ -46,7 +46,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"    \ 'dir':  '\.git$\|node_modules$\|bower_components$\'
+" ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$'
+    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|ui5$'
     \ }
+
+" vim-autoformat
+map _f :Autoformat<CR>
