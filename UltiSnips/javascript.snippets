@@ -1,33 +1,13 @@
 global !p
-def params_from_deps(deps):
-	"""
-	TODO Is not working 100%
-	"""
-	if not deps:
-		return ''
-	_deps = deps.split(',')
-	params = []
-	for dep in _deps:
-		dep = dep.strip().strip('"').strip("'")
-		if dep.find('/') > 0:
-			param = dep.split('/')[-1]
-		if dep.find('.') > 0:
-			param = dep.split('.')[-1]
-		else:
-			param = dep.strip()
-		if param:
-			params.append(param)
-	if params:
-		return ', '+', '.join(params)
-	return ''
+import sniputils
 endglobal
 
-snippet ui5obj "UI5Object definition" 
+snippet uiobj "UI5Object definition" 
 
 sap.ui.define([
 		"sap/ui/base/Object",
 		$1
-	], function (UI5Object`!p snip.rv = params_from_deps(t[1])`) {
+	], function (UI5Object`!p snip.rv = sniputils.params_from_deps(t[1])`) {
 
 	"use strict";
 
@@ -40,6 +20,5 @@ sap.ui.define([
 	});
 
 });
-
 
 endsnippet    
