@@ -64,3 +64,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+
+" YouCompleteMe
+ let g:ycm_collect_identifiers_from_comments_and_strings = 1

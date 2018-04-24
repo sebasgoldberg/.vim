@@ -1,0 +1,85 @@
+snippet comment "Comment"
+<!-- ${VISUAL}$0 -->
+endsnippet
+
+snippet uilabel "UI5 Label"
+<Label text="${1:The Label}" />
+endsnippet
+
+snippet uifloat "UI5 Float exibition value" w
+\{
+	path: '${1:path\/to\/value}',
+	type: 'sap.ui.model.type.Float',
+	formatOptions: { maxFractionDigits: 2 }
+	\}$0
+endsnippet
+
+snippet uilcell "UI5 Layout Block Row Cell"
+<l:BlockLayoutCell title="${1:Cell Title}">
+	${VISUAL}$0
+</l:BlockLayoutCell>
+endsnippet
+
+snippet uifrag "UI5 Fragment Utilization"
+<core:Fragment fragmentName="${1:my.namespace}.view.${2:FragmentName}.fragment.xml" />
+endsnippet	
+
+snippet uiblock "Block"
+<!-- ${VISUAL}$0 -->
+	<block:${1:MyBlock} id="${2:myId}" columnLayout="${3:4}"/>
+endsnippet
+
+snippet uiform "UI5 form definition."
+<forms:Form width="100%">
+	<forms:layout>
+		<forms:GridLayout />
+	</forms:layout>
+	<forms:formContainers>
+
+		${VISUAL:uifcont}$0
+
+	</forms:formContainers>
+</forms:Form>
+endsnippet
+
+snippet uifcont "UI5 Form container example."
+<forms:FormContainer id="${1:myId}" title="${2:My Title}">
+	<forms:formElements>
+
+		${VISUAL:uifelem}$0
+
+	</forms:formElements>
+</forms:FormContainer>
+endsnippet
+
+snippet uifelem "UI5 Form Element"
+<forms:FormElement label="${1:MyLabel}">
+	<forms:fields>
+		${VISUAL:<Text text="+ 1 415-321-1234" \/>}$0
+	</forms:fields>
+</forms:FormElement>
+endsnippet
+
+snippet uifinput "UI5 Form Input"
+<Input value="i\{
+	path: '${1:path\/to\/value}',
+	type: '${2:sap.ui.model.type.Float}',
+	formatOptions: { maxFractionDigits: 2 }
+	}"
+	type="${3:Number}"
+	description="${4:R$}"
+	/>
+endsnippet
+
+snippet uistat "UI5 ObjectStatus - Small building block representing status."
+<ObjectStatus
+	text="${1:myValue|\{path\/to\/value\}}"
+	state="${2:None|Error|Warning|Success}" />
+endsnippet
+
+snippet uiformat "UI5 formatter call" w
+\{
+	parts: [ \{path: '${1:path\/to\/value}'\} ],
+	formatter: '.formatter.${2:formaterFunction}'
+	\}
+endsnippet

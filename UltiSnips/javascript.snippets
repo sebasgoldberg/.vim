@@ -7,7 +7,7 @@ snippet uiobj "UI5Object definition"
 sap.ui.define([
 		"sap/ui/base/Object",
 		$1
-	], function (UI5Object`!p snip.rv = sniputils.params_from_deps(t[1])`) {
+	], function (UI5Object`!p snip.rv = sniputils.params_from_deps(t[1], prefix=', ')`) {
 
 	"use strict";
 
@@ -21,4 +21,52 @@ sap.ui.define([
 
 });
 
-endsnippet    
+endsnippet	
+
+
+snippet uidef "UI5 definition" 
+
+sap.ui.define([
+		$1
+	], function (`!p snip.rv = sniputils.params_from_deps(t[1])`) {
+
+	"use strict";
+
+	return {
+
+		${VISUAL}$0
+
+	}
+
+});
+
+endsnippet	
+
+snippet uictrl "description"
+sap.ui.define([
+		'sap/ui/core/mvc/Controller',
+		$1
+	], function(Controller`!p snip.rv = sniputils.params_from_deps(t[1], prefix=', ')`) {
+
+	'use strict';
+
+	return Controller.extend("${2:my.app.namespace}.controller.${3:MyController}", {
+		${VISUAL}$0
+	});
+});
+endsnippet
+	
+snippet uiblock "UI5 Block definition inheriting BlockBase"
+sap.ui.define([
+		'sap/uxap/BlockBase'
+], function (BlockBase) {
+
+	'use strict';
+
+	return BlockBase.extend('${1:my.namespace}.${2:view.block}.${3:MyNameBlock}', {
+		metadata: {}
+	});
+
+}, true);
+endsnippet
+	
