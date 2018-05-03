@@ -1,9 +1,11 @@
 snippet comment "Comment"
-<!-- ${VISUAL}$0 -->
+<!--
+${VISUAL}$0
+-->
 endsnippet
 
 snippet uilabel "UI5 Label"
-<Label text="${1:The Label}" />
+<Label text="${VISUAL}$0" />
 endsnippet
 
 snippet uifloat "UI5 Float exibition value" w
@@ -21,13 +23,37 @@ snippet uilcell "UI5 Layout Block Row Cell"
 endsnippet
 
 snippet uifrag "UI5 Fragment Utilization"
-<core:Fragment fragmentName="${1:my.namespace}.view.${2:FragmentName}.fragment.xml" />
+<core:Fragment fragmentName="${1:my.namespace}.view.${2:FragmentName}.fragment.xml" type="XML" />
 endsnippet	
+
+snippet uifragdef "UI5 Fragment definition"
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	$0
+</core:FragmentDefinition>
+endsnippet
 
 snippet uiblock "Block"
 <!-- ${VISUAL}$0 -->
 	<block:${1:MyBlock} id="${2:myId}" columnLayout="${3:4}"/>
 endsnippet
+
+snippet uisform "UI5 Simple Form"
+<form:SimpleForm
+	layout="ResponsiveGridLayout"
+	columnsXL="4" columnsL="4" columnsM="2" columnsS="1"
+	labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12"
+	breakpointL="500" breakpointM="250"
+	>
+	uititle$0
+	uilabel
+	uifinput
+</form:SimpleForm>
+endsnippet
+
+snippet uititle "UI5 Title"
+<core:Title text="$0" />
+endsnippet
+	
 
 snippet uiform "UI5 form definition."
 <forms:Form width="100%">
@@ -75,6 +101,11 @@ snippet uistat "UI5 ObjectStatus - Small building block representing status."
 <ObjectStatus
 	text="${1:myValue|\{path\/to\/value\}}"
 	state="${2:None|Error|Warning|Success}" />
+endsnippet
+
+snippet uitext "UI5 Text"
+<Text
+	text="${1:myValue|\{path\/to\/value\}}" />
 endsnippet
 
 snippet uiformat "UI5 formatter call" w
