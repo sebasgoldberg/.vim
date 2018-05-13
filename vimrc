@@ -48,7 +48,7 @@ let g:syntastic_check_on_wq = 0
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|bower_components$\|dist$\|node_modules$\|ui5$'
+    \ 'dir':  '\.git$\|bower_components$\|transp$\|dist$\|node_modules$\|ui5$'
     \ }
 
 " vim-autoformat
