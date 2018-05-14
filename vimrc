@@ -70,3 +70,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " Mundo
 nnoremap <F5> :MundoToggle<CR>
+
+" undo tree save
+set undofile
