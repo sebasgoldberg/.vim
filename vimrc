@@ -45,6 +45,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_xml_xmllint_args = "--nowarning"
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
@@ -73,3 +74,6 @@ nnoremap <F5> :MundoToggle<CR>
 
 " undo tree save
 set undofile
+
+syntax on
+set backspace=indent,eol,start
