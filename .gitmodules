@@ -34,3 +34,6 @@
 [submodule "bundle/vim-mundo"]
 	path = bundle/vim-mundo
 	url = https://github.com/simnalamburt/vim-mundo.git
+[submodule "bundle/vim-solidity"]
+	path = bundle/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
