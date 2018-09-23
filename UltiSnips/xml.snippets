@@ -4,6 +4,28 @@ ${VISUAL}$0
 -->
 endsnippet
 
+snippet uidialog "UI5 Dialog definition"
+<Dialog
+	title="${1:title}"
+	contentWidth="${2:400}px"
+	contentHeight="${3:600}px"
+	>
+
+	<subHeader>
+	</subHeader>
+
+	<beginButton>
+	</beginButton>
+
+	<endButton>
+	</endButton>
+
+	<content>
+		${VISUAL}$0
+	</content>
+</Dialog>
+endsnippet
+
 snippet uilabel "UI5 Label"
 <Label text="${VISUAL}$0" />
 endsnippet
@@ -16,6 +38,33 @@ snippet uifloat "UI5 Float exibition value" w
 	\}$0
 endsnippet
 
+snippet uizerorem "UI5 format and remove zeros at begining." w
+\{
+	path: '${VISUAL}',
+	type: 'sap.ui.model.odata.type.String',
+	constraints: \{
+		isDigitSequence : true,
+		maxLength : 10$0
+		\}
+	\}
+endsnippet
+
+snippet uidecimal "UI5 Decimal formatting" w
+\{
+	path: '${VISUAL}',
+	type: 'sap.ui.model.odata.type.Decimal',
+	constraints: { scale: 2$0 }
+	\}
+endsnippet
+
+snippet uidate "UI5 Date formatting" w
+\{
+	path: '${1:path\/to\/value}',
+	type: 'sap.ui.model.type.Date',
+	formatOptions: { UTC: true, style: 'short' }
+	\}$0
+endsnippet
+
 snippet uilcell "UI5 Layout Block Row Cell"
 <l:BlockLayoutCell title="${1:Cell Title}">
 	${VISUAL}$0
@@ -23,7 +72,7 @@ snippet uilcell "UI5 Layout Block Row Cell"
 endsnippet
 
 snippet uifrag "UI5 Fragment Utilization"
-<core:Fragment fragmentName="${1:my.namespace}.view.${2:FragmentName}.fragment.xml" type="XML" />
+<core:Fragment fragmentName="${1:my.namespace}.view.${2:FragmentName}" type="XML" />
 endsnippet	
 
 snippet uifragdef "UI5 Fragment definition"
@@ -112,5 +161,14 @@ snippet uiformat "UI5 formatter call" w
 \{
 	parts: [ \{path: '${1:path\/to\/value}'\} ],
 	formatter: '.formatter.${2:formaterFunction}'
+	\}
+endsnippet
+
+snippet uitypebind "UI5 type binding" w
+\{
+	path: '${1:path\/to\/value}',
+	type: '${2:sap.ui.model.type.String}',
+	constraints:\{
+		\}
 	\}
 endsnippet

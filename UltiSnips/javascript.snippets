@@ -2,6 +2,16 @@ global !p
 import sniputils
 endglobal
 
+snippet super "Call parent method"
+${1:ParentClass}.prototype.${2:parentMethod}.call(this);
+endsnippet
+
+snippet retprom "Returns new Promise"
+return new Promise( (resolve, reject) => {
+	${VISUAL}$0
+});
+endsnippet
+
 snippet uiobj "UI5Object definition" 
 
 sap.ui.define([
