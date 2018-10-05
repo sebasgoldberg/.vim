@@ -49,7 +49,7 @@ let g:syntastic_xml_xmllint_args = "--nowarning"
 
 " ctrlp
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|bower_components$\|transp$\|dist$\|node_modules$\|ui5$'
+    \ 'dir':  '\.git$\|bower_components$\|transp$\|dist$\|bsp$\|node_modules$\|ui5$'
     \ }
 
 " vim-autoformat
